@@ -1,4 +1,4 @@
-package com.bartfokker.dashboard;
+package com.example.springblueprint;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

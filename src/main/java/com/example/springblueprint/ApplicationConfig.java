@@ -1,4 +1,4 @@
-package com.bartfokker.dashboard;
+package com.example.springblueprint;
 
 import org.springframework.context.annotation.Configuration;
 
