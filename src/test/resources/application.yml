@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: jdbc:tc:postgresql:latest:///databasename
+    driver-class-name: org.testcontainers.jdbc.ContainerDatabaseDriver
+  data:
+    jpa:
+      database-platform: org.hibernate.dialect.PostgreSQLDialect
+      hibernate:
+        ddl-auto: none
+
+keycloak:
+  enabled: false

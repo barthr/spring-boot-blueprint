@@ -1,0 +1,73 @@
+plugins {
+    id 'org.springframework.boot' version '2.3.4.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+    id 'java'
+    id "com.github.node-gradle.node" version "2.2.4"
+}
+
+group = 'com.bartfokker'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'ch.qos.logback', name: 'logback-core', version: '1.2.3'
+    compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
+    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.30'
+
+
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.flywaydb:flyway-core'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    runtimeOnly 'org.postgresql:postgresql'
+    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+    compile group: 'org.keycloak', name: 'keycloak-spring-boot-starter', version: '11.0.2'
+    compile group: 'org.keycloak.bom', name: 'keycloak-adapter-bom', version: '11.0.2', ext: 'pom'
+    implementation 'org.keycloak:keycloak-spring-boot-starter'
+
+    testImplementation 'org.springframework.security:spring-security-test'
+    testCompile "org.testcontainers:postgresql:1.15.0-rc2"
+    testImplementation "org.testcontainers:junit-jupiter:1.15.0-rc2"
+    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+    }
+    testCompile group: 'org.mockito', name: 'mockito-core', version: '3.6.0'
+    testCompile group: 'org.mockito', name: 'mockito-junit-jupiter', version: '3.6.0'
+
+}
+
+bootBuildImage {
+    imageName = "<YOUR_IMAGE_NAME>"
+}
+
+node {
+    download = false
+    nodeModulesDir = file("${project.projectDir}/src/main/webapp")
+}
+
+task buildFrontend(type: NpxTask) {
+    dependsOn(npmInstall)
+    command = 'npm'
+    args = ['run', 'build']
+}
+
+processResources {
+    from('src/main/webapp/dist') {
+        into('static/.')
+    }
+}
+
+test {
+    useJUnitPlatform()
+}

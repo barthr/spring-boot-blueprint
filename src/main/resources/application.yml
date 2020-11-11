@@ -1,0 +1,26 @@
+spring:
+  devtools:
+    restart:
+      enabled: true
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: false
+  datasource:
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/postgres}
+    username: ${DATABASE_USERNAME:postgres}
+    password: ${DATABASE_PASSWORD:password}
+keycloak:
+  auth-server-url: ${KEYCLOAK_SERVER_URL:http://localhost:8080/auth}
+  realm: ${KEYCLOAK_REALM:master}
+  resource: ${KEYCLOAK_RESOURCE:spring-boot-blueprint}
+  public-client: true
+  ssl-required: ${KEYCLOAK_SSL_REQUIRED:external}
+  principal-attribute: preferred_username
+  confidential-port: ${KEYCLOAK_CONFIDENTIAL_PORT:443}
+
+server:
+  port: ${SERVER_PORT:8000}
+
+logging:
+  level:
+    root: INFO
