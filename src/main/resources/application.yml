@@ -11,8 +11,8 @@ spring:
     password: ${DATABASE_PASSWORD:password}
 keycloak:
   auth-server-url: ${KEYCLOAK_SERVER_URL:http://localhost:8080/auth}
-  realm: ${KEYCLOAK_REALM:master}
-  resource: ${KEYCLOAK_RESOURCE:spring-boot-blueprint}
+  realm: ${KEYCLOAK_REALM:spring-boot-blueprint}
+  resource: ${KEYCLOAK_RESOURCE:spring-boot-app}
   public-client: true
   ssl-required: ${KEYCLOAK_SSL_REQUIRED:external}
   principal-attribute: preferred_username

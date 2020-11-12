@@ -17,12 +17,15 @@ services:
     image: quay.io/keycloak/keycloak:latest
     ports:
       - 8080:8080
+    volumes:
+    - ./realm.json:/tmp/realm.json
     environment:
       KEYCLOAK_USER: admin
       KEYCLOAK_PASSWORD: admin
+      KEYCLOAK_IMPORT: /tmp/realm.json
       DB_VENDOR: POSTGRES
       DB_ADDR: postgres
-      DB_DATABASE: dashboard
+      DB_DATABASE: keycloak
       DB_SCHEMA: public
       DB_USER: postgres
       DB_PASSWORD: password

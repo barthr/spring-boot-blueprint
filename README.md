@@ -41,6 +41,7 @@ docker-compose -f src/main/docker/docker-compose.yml -d up
 ```
 cd src/main/webapp 
 npm i
+cp .env.example .env.local
 npm run serve
 ```
 

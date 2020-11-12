@@ -1,27 +1,13 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png" />
-    <div>
-      <ul>
-        <li v-for="(story, key) in result" :key="key">
-          <a :href="story.hackernewsUrl">{{ story.title }}</a> ({{
-            story.score
-          }})
-        </li>
-      </ul>
-    </div>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import { getBestStories } from "@/api/hackernews";
-
 export default {
   name: "App",
   created() {
-    getBestStories().then(stories => {
-      this.result = stories.content;
-    });
   },
   data() {
     return {
