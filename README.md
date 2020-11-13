@@ -1,4 +1,4 @@
-# Spring boot starter blueprint
+# Spring boot starter blueprint :rocket:
 
 This project aims to provide a very minimal but modern feature complete blueprint for building and deploying 
 a full stack web application
