@@ -12,7 +12,7 @@ This blueprint is useful for people who want to start building a web application
 defaults but want to remain flexible.     
 As a result this blueprint only includes the libraries and config you need to start
 building, it doesn't provide any application code or structure which help in building web applications.  
-For this you can visit the spring docs which provide many useful samples or have a look at the [Help section](./HELP.md).
+For this you can visit the [spring docs](https://docs.spring.io/spring-framework/docs/current/reference/html/index.html) which provide many useful samples.
 
 ## Features
 
