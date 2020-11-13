@@ -56,8 +56,8 @@ docker-compose up -d
 2. Install dependencies & Start the frontend (from root of folder)
 > This will start a hot reloaded Vue.js frontend on http://localhost:8081
 ```
+./gradlew npmInstall
 cd src/main/webapp 
-npm i
 cp .env.example .env.local
 npm run serve
 ```
@@ -80,7 +80,18 @@ After executing these steps your frontend is accessible on http://localhost:8081
 
 Deployment is done using docker and the provided java image from spring boot
 
-// TODO provide values for image gradle.build
+There is some config which need to be set:
+
+> file: *build.gradle:50*
+
+```
+bootBuildImage {
+    imageName = "<YOUR_IMAGE_NAME>"
+}
+```
+
+Set `YOUR_IMAGE_NAME` to the name you would like to have for your image.
+
 
 __To create a docker image including the frontend__
 ```
@@ -92,4 +103,18 @@ __To create a docker image without the frontend__
 ./gradlew bootBuildImage
 ```
 
-## Hot reloading (todo)
+## Github CI
+
+If you would like to use the provided github actions a couple of more settings are required. First you need to set 2 secrets in your github repository: 
+
+```
+DOCKER_USERNAME=<your_username>
+DOCKER_PASSWORD=<your_password>
+```
+Next you also need to provide which image to push to your registry, this should be the same as the one provided in the `build.gradle`
+
+> file: *.github/workflows/gradle.yaml:57*
+
+```
+repository: <DOCKER_HUB_NAMESPACE>/<DOCKER_HUB_REPOSITORY>
+```
