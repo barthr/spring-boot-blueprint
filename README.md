@@ -81,6 +81,10 @@ npm run serve
 
 After executing these steps your frontend is accessible on http://localhost:8081 and the api on http://localhost:8000
 
+Next, head over to http://localhost:8080/auth/admin/master/console/#/realms/spring-boot-blueprint/users 
+login using username: admin and password: admin and create a new user.
+After creating this user head over to the credentials section and pick a password for this user, you should be able to login with this user in the application
+
 ## Building for production
 
 Deployment is done using docker and the provided java image from spring boot
