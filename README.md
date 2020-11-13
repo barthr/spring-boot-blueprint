@@ -21,12 +21,28 @@ For this you can visit the spring docs which provide many useful samples or have
 * Integrated dev tools for hot reloading (optional, depending on IDE setup)
 * Simple CI integration for test & build pipeline (Currently only [Github actions](https://github.com/features/actions))
 
+## What is this not
+
+* This is not a full fletched generator like [JHipster](https://www.jhipster.tech/). So it will not generate all kinds of CRUD logic for you. This is just a barebones blueprint to get your application up and running. See it as a more complete and enhanced version of [start.spring.io](https://start.spring.io/). Some experience with spring/spring boot is required to start building an application with this blueprint.
+* Using this blueprint is a one time action, it is there to bootstrap your application not provide you with updates along the way.
+
+
 ## Requirements
 
 - [JDK 11](https://openjdk.java.net/projects/jdk/11/)
 - Recent version [Node.js](https://nodejs.org/en/)
 - [Docker](https://www.docker.com/) (including [docker-compose](https://docs.docker.com/compose/))
 - Your favorite IDE (I prefer [IntelliJ Idea](https://www.jetbrains.com/idea/))
+
+## Installation
+
+> Retrieving a fresh new copy without any references
+```
+git clone https://github.com/barthr/spring-boot-blueprint
+cd spring-boot-blueprint
+rm -rf .git
+git init
+```
 
 ## Running the application
 
