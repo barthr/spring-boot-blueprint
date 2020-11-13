@@ -1,5 +1,10 @@
 # Spring boot starter blueprint :rocket:
 
+<p align="center">
+    <img src="https://dzone.com/storage/temp/12434118-spring-boot-logo.png" height="200"/> 
+    <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Favatars1.githubusercontent.com%2Fu%2F4921466%3Fs%3D280%26v%3D4&f=1&nofb=1" height="200"/>
+</div>
+
 This project aims to provide a very minimal but modern feature complete blueprint for building and deploying 
 a full stack web application
 using Spring boot and Vue.js.  
