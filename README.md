@@ -118,3 +118,16 @@ Next you also need to provide which image to push to your registry, this should 
 ```
 repository: <DOCKER_HUB_NAMESPACE>/<DOCKER_HUB_REPOSITORY>
 ```
+
+## Frequently asked questions
+
+> What if I don't want to use the frontend?
+
+*Remove the webapp folder in `src/main/webapp` and the buildsteps in `build.gradle` (including the node plugin)*
+> What if I don't wnat to use the github actions?
+
+`rm -rf .github`
+
+> Where can I find the frontend when running the spring boot application?
+
+*It is embedded during build time and can be found on the same port as your application*
