@@ -54,7 +54,7 @@ git init
 1. Start the infrastructure (from root of folder)
 > This will start a postgres container on localhost:5432 and keycloak which is accessible on http://localhost:8080
 ```
-cd /src/main/docker
+cd src/main/docker
 docker-compose up -d 
 ```
 
