@@ -11,11 +11,11 @@ For this you can visit the spring docs which provide many useful samples or have
 
 ## Features
 
-* [Spring Security](https://spring.io/projects/spring-security) with [Keycloak](https://www.keycloak.org/) integration
-* Migrations using [Flyway](https://flywaydb.org/)
-* Database setup using [PostgreSQL](https://www.postgresql.org/) + [Spring Data JPA](https://docs.spring.io/spring-boot/docs/2.3.4.RELEASE/reference/htmlsingle/#boot-features-jpa-and-spring-data)
-* [Vue.js](https://vuejs.org/) frontend embedded in the jar at build time
-* [Testcontainers](https://www.testcontainers.org/) for integration testing of repositories and other infrastructure
+* [Spring Security](https://spring.io/projects/spring-security) with [Keycloak](https://www.keycloak.org/) integration :key:
+* Migrations using [Flyway](https://flywaydb.org/) :file_folder:
+* Database setup using [PostgreSQL](https://www.postgresql.org/) + [Spring Data JPA](https://docs.spring.io/spring-boot/docs/2.3.4.RELEASE/reference/htmlsingle/#boot-features-jpa-and-spring-data) :file_folder:
+* [Vue.js](https://vuejs.org/) frontend embedded in the jar at build time :card_index:
+* [Testcontainers](https://www.testcontainers.org/) for integration testing of repositories and other infrastructure 
 * [Mockito](https://site.mockito.org/) integration for mocking objects and asserting certain behaviour
 * [Docker-compose](https://docs.docker.com/compose/) for running required infrastructure locally (Postgres, Keycloak)
 * Integrated dev tools for hot reloading (optional, depending on IDE setup)
