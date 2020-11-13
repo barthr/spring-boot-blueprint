@@ -30,13 +30,14 @@ For this you can visit the spring docs which provide many useful samples or have
 
 ## Running the application
 
-1. Start the infrastructure
+1. Start the infrastructure (from root of folder)
 > This will start a postgres container on localhost:5432 and keycloak which is accessible on http://localhost:8080
 ```
-docker-compose -f src/main/docker/docker-compose.yml -d up
+cd /src/main/docker
+docker-compose up -d 
 ```
 
-2. Install dependencies & Start the frontend
+2. Install dependencies & Start the frontend (from root of folder)
 > This will start a hot reloaded Vue.js frontend on http://localhost:8081
 ```
 cd src/main/webapp 

@@ -7,18 +7,17 @@ services:
     ports:
       - 5432:5432
     environment:
-      POSTGRES_DB: dashboard
+      POSTGRES_DB: postgres
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
     volumes:
+      - ./db-init-scripts:/docker-entrypoint-initdb.d
       - db:/var/lib/postgresql/data
   keycloak:
     container_name: keycloak
     image: quay.io/keycloak/keycloak:latest
     ports:
       - 8080:8080
-    volumes:
-    - ./realm.json:/tmp/realm.json
     environment:
       KEYCLOAK_USER: admin
       KEYCLOAK_PASSWORD: admin
@@ -29,6 +28,8 @@ services:
       DB_SCHEMA: public
       DB_USER: postgres
       DB_PASSWORD: password
+    volumes:
+      - ./realm.json:/tmp/realm.json
     depends_on:
       - postgres
 

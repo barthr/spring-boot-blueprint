@@ -6,14 +6,7 @@
 
 <script>
 export default {
-  name: "App",
-  created() {
-  },
-  data() {
-    return {
-      result: []
-    };
-  }
+  name: "App"
 };
 </script>
 

@@ -1,6 +1,5 @@
 import router from "./router";
 import store from "./store";
-import installElementPlus from "./plugins/element.js";
 import { createApp } from "vue";
 import App from "./App";
 import Keycloak from "./keycloak";
@@ -8,8 +7,6 @@ import Keycloak from "./keycloak";
 const app = createApp(App)
   .use(store)
   .use(router);
-
-installElementPlus(app);
 
 Keycloak.init({ onLoad: "login-required" })
   .then(auth => {
